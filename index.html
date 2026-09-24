@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- lang="pt-BR" avisa ao navegador (e aos leitores de tela) que a página está em português -->
+<html lang="pt-BR">
+
+<head>
+    <!-- charset UTF-8 permite usar acentos (ç, ã, é...) sem problemas -->
+    <meta charset="UTF-8">
+    <!-- viewport faz a página se ajustar à largura da tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Nome | Desenvolvedor Freelancer</title>
+
+    <!-- Font Awesome (Fase 2): biblioteca de ícones carregada pela internet (CDN).
+         Depois dela, basta escrever <i class="fa-solid fa-nome"></i> para mostrar um ícone. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS temporário da Fase 1: só contornos, para enxergar o esqueleto da página -->
+    <link rel="stylesheet" href="wireframe.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         CABEÇALHO
+         Fica no topo da página: logo, menu de navegação e botão de tema.
+         ========================================================= -->
+    <header class="cabecalho">
+        <!-- .container centraliza o conteúdo e limita a largura -->
+        <div class="container cabecalho__conteudo">
+
+            <!-- Logo: um link que leva de volta ao topo (#hero) -->
+            <a href="#hero" class="logo">
+                <!-- Ícone de código "</>", que representa programação -->
+                <i class="fa-solid fa-code"></i>
+                <span>Seu Nome</span>
+            </a>
+
+            <!-- nav = área de navegação principal do site -->
+            <nav class="menu">
+                <!-- ul = lista não ordenada; cada li é um item do menu -->
+                <ul class="menu__lista">
+                    <!-- o href="#id" faz a página rolar até a seção com aquele id -->
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão para trocar o tema (claro/escuro). Só vai funcionar com JavaScript, no fim. -->
+            <!-- type="button" indica que ele não envia formulário -->
+            <button type="button" class="botao-tema" aria-label="Trocar tema">
+                <!-- Ícone de lua: símbolo comum para "tema escuro" -->
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- main = conteúdo principal da página (tudo que não é cabeçalho nem rodapé) -->
+    <main>
+
+        <!-- =========================================================
+             HERO (destaque)
+             Primeira coisa que o visitante vê: texto à esquerda, código à direita.
+             ========================================================= -->
+        <section id="hero" class="hero">
+            <div class="container hero__conteudo">
+
+                <!-- Coluna da esquerda: textos, botões e métricas -->
+                <div class="hero__texto">
+                    <!-- "tag" = pequeno texto de categoria acima do título -->
+                    <p class="tag">DESENVOLVEDOR FREELANCER</p>
+
+                    <!-- h1 = título mais importante da página (só existe um h1) -->
+                    <!-- o span separa "vida digital." para podermos destacar com cor na Fase 3 -->
+                    <h1>Ideias que ganham <span>vida digital.</span></h1>
+
+                    <p class="subtitulo">
+                        Desenvolvo sistemas web, aplicações desktop e aplicativos mobile para
+                        transformar desafios reais em soluções simples, eficientes e bonitas.
+                    </p>
+
+                    <!-- Dois links com cara de botão, lado a lado -->
+                    <div class="botoes">
+                        <!-- Seta saindo da caixa: indica "ir para outro lugar" (a seção de projetos) -->
+                        <a href="#projetos" class="botao">
+                            Conheça meu trabalho
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="#contato" class="botao">Vamos conversar</a>
+                    </div>
+
+                    <!-- Métricas: três números lado a lado -->
+                    <ul class="metricas">
+                        <li class="metrica">
+                            <strong>6+</strong>
+                            <span>anos de experiência</span>
+                        </li>
+                        <li class="metrica">
+                            <strong>42</strong>
+                            <span>projetos entregues</span>
+                        </li>
+                        <li class="metrica">
+                            <strong>18</strong>
+                            <span>clientes satisfeitos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna da direita: uma "janela" de editor de código -->
+                <div class="janela-codigo">
+                    <!-- Barra de cima da janela: 3 pontinhos + nome do arquivo -->
+                    <div class="janela-codigo__barra">
+                        <div class="pontinhos">
+                            <span class="pontinho"></span>
+                            <span class="pontinho"></span>
+                            <span class="pontinho"></span>
+                        </div>
+                        <span>luis.dev</span>
+                    </div>
+
+                    <!-- pre mantém os espaços e quebras de linha exatamente como foram escritos -->
+                    <!-- code indica que o texto é código de programação -->
+<pre><code>const solution = {
+  idea: 'transformadora',
+  design: 'intuitivo',
+  technology: 'eficiente'
+};
+// pronto para o próximo desafio</code></pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SOBRE MIM
+             Foto à esquerda, apresentação à direita.
+             ========================================================= -->
+        <section id="sobre" class="sobre">
+            <div class="container sobre__conteudo">
+
+                <!-- figure agrupa a imagem com o selo que a acompanha -->
+                <figure class="sobre__foto">
+                    <img src="assets/foto.jpg" alt="Foto de perfil">
+                    <!-- figcaption = legenda da figura (aqui usamos como "selo") -->
+                    <figcaption class="selo">Disponível para novos projetos</figcaption>
+                </figure>
+
+                <!-- Textos da apresentação -->
+                <div class="sobre__texto">
+                    <p class="tag">SOBRE MIM</p>
+
+                    <!-- h2 = título de seção (um nível abaixo do h1) -->
+                    <h2>Tecnologia com propósito, <span>design com significado.</span></h2>
+
+                    <p>
+                        Sou desenvolvedor freelancer e ajudo pessoas e empresas a tirarem ideias
+                        do papel com soluções digitais sob medida.
+                    </p>
+                    <p>
+                        Gosto de unir código bem feito a interfaces claras, sempre pensando em
+                        quem vai usar o sistema no dia a dia.
+                    </p>
+
+                    <!-- Badges = etiquetas com as tecnologias que eu uso -->
+                    <ul class="badges">
+                        <li class="badge">JavaScript</li>
+                        <li class="badge">TypeScript</li>
+                        <li class="badge">React</li>
+                        <li class="badge">Node.js</li>
+                        <li class="badge">Electron</li>
+                        <li class="badge">React Native</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SERVIÇOS
+             Cabeçalho da seção + três cards lado a lado.
+             ========================================================= -->
+        <section id="servicos" class="servicos">
+            <div class="container">
+
+                <!-- Cabeçalho padrão de seção: tag, título e texto de apoio -->
+                <div class="secao__cabecalho">
+                    <p class="tag">COMO POSSO AJUDAR</p>
+                    <h2>Soluções para diferentes desafios</h2>
+                    <p>
+                        Cada projeto é único. Escolha o tipo de solução que combina com o seu
+                        negócio e vamos construir juntos.
+                    </p>
+                </div>
+
+                <!-- Linha com os três cards -->
+                <div class="cards">
+
+                    <!-- article = conteúdo independente, que faz sentido sozinho -->
+                    <article class="card">
+                        <!-- Ícone de janela de navegador: representa sistemas que rodam na web -->
+                        <i class="fa-solid fa-window-maximize"></i>
+                        <h3>Sistemas Web</h3>
+                        <p>
+                            Plataformas, painéis administrativos, lojas virtuais e sistemas
+                            personalizados que funcionam direto no navegador.
+                        </p>
+                        <!-- Seta para a direita: convida a "seguir em frente" -->
+                        <a href="#contato">
+                            Saiba mais
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Card do meio: ganha a classe extra "card--destaque" para ser destacado na Fase 3 -->
+                    <article class="card card--destaque">
+                        <!-- Ícone de celular: representa aplicativos mobile -->
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h3>Aplicações Mobile</h3>
+                        <p>
+                            Aplicativos para Android e iOS com interfaces intuitivas, desempenho
+                            e uma experiência agradável.
+                        </p>
+                        <!-- Seta para a direita: convida a "seguir em frente" -->
+                        <a href="#contato">
+                            Saiba mais
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <!-- Ícone de monitor: representa programas para computador -->
+                        <i class="fa-solid fa-desktop"></i>
+                        <h3>Aplicações Desktop</h3>
+                        <p>
+                            Sistemas instaláveis para Windows, macOS e Linux, ideais para rotinas
+                            internas que funcionam offline.
+                        </p>
+                        <!-- Seta para a direita: convida a "seguir em frente" -->
+                        <a href="#contato">
+                            Saiba mais
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PORTFÓLIO
+             Layout assimétrico: um projeto grande à esquerda
+             e uma coluna com dois projetos menores à direita.
+             ========================================================= -->
+        <section id="projetos" class="projetos">
+            <div class="container">
+
+                <div class="secao__cabecalho">
+                    <p class="tag">PORTFÓLIO</p>
+                    <h2>Projetos que fazem a diferença</h2>
+                    <p>
+                        Alguns trabalhos recentes que mostram como transformo necessidades reais
+                        em produtos digitais.
+                    </p>
+                </div>
+
+                <!-- Linha principal: [projeto grande] [coluna com 2 projetos] -->
+                <div class="projetos__layout">
+
+                    <!-- Projeto grande (esquerda) -->
+                    <article class="projeto projeto--grande">
+                        <!-- Área de "preview": imita a tela do sistema -->
+                        <div class="projeto__preview">
+                            <!-- Mini-caixas com números, como num painel -->
+                            <div class="mini-caixa">
+                                <span>Receita mensal</span>
+                                <strong>R$ 48.920</strong>
+                                <span>+18,4%</span>
+                            </div>
+                            <div class="mini-caixa">
+                                <span>Pedidos</span>
+                                <strong>1.284</strong>
+                                <span>+12,8%</span>
+                            </div>
+                        </div>
+
+                        <div class="projeto__info">
+                            <p class="projeto__categoria">SISTEMA WEB</p>
+                            <h3>Nexo Gestão</h3>
+                            <p>
+                                Plataforma de gestão financeira para pequenos negócios, reunindo
+                                vendas, estoque e relatórios em um só lugar.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Coluna da direita: dois projetos empilhados -->
+                    <div class="projetos__coluna">
+
+                        <article class="projeto">
+                            <!-- Preview vazio por enquanto -->
+                            <div class="projeto__preview"></div>
+                            <div class="projeto__info">
+                                <p class="projeto__categoria">APLICATIVO MOBILE</p>
+                                <h3>Grão App</h3>
+                                <p>Aplicativo de pedidos e fidelidade para uma cafeteria local.</p>
+                            </div>
+                        </article>
+
+                        <article class="projeto">
+                            <!-- Preview vazio por enquanto -->
+                            <div class="projeto__preview"></div>
+                            <div class="projeto__info">
+                                <p class="projeto__categoria">APLICAÇÃO DESKTOP</p>
+                                <h3>Ateliê Pro</h3>
+                                <p>
+                                    Aplicação desktop para organização de agenda, clientes e
+                                    finanças de profissionais autônomos.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             MEU PROCESSO
+             Quatro passos lado a lado, em ordem.
+             ========================================================= -->
+        <section id="processo" class="processo">
+            <div class="container">
+
+                <div class="secao__cabecalho">
+                    <p class="tag">MEU PROCESSO</p>
+                    <h2>Do desafio à solução</h2>
+                    <p>
+                        Um caminho simples e transparente, para você saber exatamente o que
+                        acontece em cada etapa.
+                    </p>
+                </div>
+
+                <!-- ol = lista ORDENADA, porque os passos seguem uma sequência -->
+                <ol class="passos">
+                    <li class="passo">
+                        <span class="passo__numero">01</span>
+                        <h3>Descoberta</h3>
+                        <p>Entendo sua ideia, seus objetivos e as necessidades do público.</p>
+                    </li>
+                    <li class="passo">
+                        <span class="passo__numero">02</span>
+                        <h3>Planejamento</h3>
+                        <p>Defino as funcionalidades, tecnologias e etapas do projeto.</p>
+                    </li>
+                    <li class="passo">
+                        <span class="passo__numero">03</span>
+                        <h3>Desenvolvimento</h3>
+                        <p>Transformo o planejamento em uma aplicação funcional e segura.</p>
+                    </li>
+                    <li class="passo">
+                        <span class="passo__numero">04</span>
+                        <h3>Entrega</h3>
+                        <p>Publico a solução e acompanho os próximos passos da evolução.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             CONTATO
+             Texto à esquerda, dois canais de contato (links) à direita.
+             ========================================================= -->
+        <section id="contato" class="contato">
+            <div class="container contato__conteudo">
+
+                <div class="contato__texto">
+                    <p class="tag">VAMOS CRIAR JUNTOS?</p>
+                    <h2>Tem uma ideia? <span>Vamos conversar.</span></h2>
+                    <p>
+                        Me conte sobre o seu projeto. Respondo rapidinho e, juntos, encontramos a
+                        melhor solução para o seu desafio.
+                    </p>
+                </div>
+
+                <!-- Canais de contato: cada canal é um link de verdade -->
+                <div class="contato__canais">
+
+                    <!-- mailto: abre o programa de e-mail já com o endereço preenchido -->
+                    <a href="mailto:contato@luis.dev" class="canal">
+                        <!-- Ícone de arroba (@): representa e-mail -->
+                        <i class="fa-solid fa-at"></i>
+                        <span class="canal__rotulo">Escreva para mim</span>
+                        <span class="canal__valor">contato@luis.dev</span>
+                        <!-- Seta saindo da caixa: indica que o link abre outro programa -->
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <!-- wa.me abre uma conversa no WhatsApp com esse número -->
+                    <!-- target="_blank" abre em nova aba; rel="noopener" é uma proteção de segurança -->
+                    <a href="https://wa.me/5538912341234" class="canal" target="_blank" rel="noopener">
+                        <!-- Logo do WhatsApp (é uma marca, por isso usa "fa-brands") -->
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="canal__rotulo">Chame no WhatsApp</span>
+                        <span class="canal__valor">(38) 91234-1234</span>
+                        <!-- Seta saindo da caixa: indica que o link abre o WhatsApp -->
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         RODAPÉ
+         Direitos autorais à esquerda, redes sociais à direita.
+         ========================================================= -->
+    <footer class="rodape">
+        <div class="container rodape__conteudo">
+
+            <!-- &copy; é o código HTML do símbolo © -->
+            <p>&copy; 2026 Seu Nome. Desenvolvido com criatividade e código.</p>
+
+            <ul class="redes">
+                <!-- Agora os links mostram só o ícone (sem texto).
+                     Por isso o aria-label é importante: ele "diz" o nome da rede
+                     para quem usa leitor de tela. Os três são marcas, então usam "fa-brands". -->
+                <li>
+                    <a href="#" aria-label="LinkedIn">
+                        <!-- Logo do LinkedIn -->
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="GitHub">
+                        <!-- Logo do GitHub -->
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Instagram">
+                        <!-- Logo do Instagram -->
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

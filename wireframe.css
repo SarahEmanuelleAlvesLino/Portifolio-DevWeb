@@ -1,0 +1,389 @@
+/* =============================================================
+   WIREFRAME.CSS — CSS TEMPORÁRIO DA FASE 1
+   Objetivo: enxergar o "esqueleto" da página.
+   Aqui só existe: reset, container, flexbox, espaçamentos e contornos.
+   NÃO tem cores, fundos, sombras nem bordas arredondadas (isso é Fase 3).
+   ============================================================= */
+
+
+/* ---------- 1. RESET ----------
+   O asterisco (*) seleciona TODOS os elementos.
+   - margin e padding: 0 tiram os espaços que o navegador coloca sozinho.
+   - box-sizing: border-box faz a largura incluir o padding e a borda,
+     assim uma caixa de 300px continua com 300px mesmo com padding. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tira as bolinhas/números das listas (ul e ol).
+   Usamos listas pela semântica, não pela aparência. */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Faz a imagem nunca ficar maior que a caixa onde ela está */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- 2. CONTAINER ----------
+   Caixa que centraliza o conteúdo e limita a largura em telas grandes.
+   - max-width: largura máxima de 1120px.
+   - margin: 0 auto: 0 em cima/embaixo e "auto" nas laterais = centralizado.
+   - padding lateral: espaço para o conteúdo não encostar na borda da tela. */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ---------- 3. CONTORNOS DO WIREFRAME ----------
+   outline desenha uma linha em volta da caixa SEM ocupar espaço
+   (diferente de border, que aumenta o tamanho da caixa).
+   A linha tracejada cinza serve só para enxergar a estrutura. */
+header,
+section,
+footer,
+nav,
+.card,
+.projeto,
+.projeto__preview,
+.mini-caixa,
+.janela-codigo,
+.janela-codigo__barra,
+.pontinho,
+.sobre__foto,
+.selo,
+.badge,
+.botao,
+.botao-tema,
+.metrica,
+.passo,
+.canal {
+    outline: 1px dashed #999;
+}
+
+
+/* ---------- 4. ESPAÇAMENTO DAS SEÇÕES ----------
+   padding em cima e embaixo para separar uma seção da outra. */
+section {
+    padding: 80px 0;
+}
+
+
+/* ---------- 5. CABEÇALHO ----------
+   OBS: o cabeçalho FIXO (position: fixed) fica para a Fase 3.
+   Motivo: sem cor de fundo, o texto das seções apareceria
+   "por baixo" do menu ao rolar a página. */
+.cabecalho {
+    padding: 20px 0;
+}
+
+/* Logo | menu | botão de tema, todos na mesma linha.
+   - justify-content: space-between empurra os itens para as pontas
+     e distribui o espaço que sobra entre eles.
+   - align-items: center alinha tudo pelo meio, na vertical. */
+.cabecalho__conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Ícone + nome do logo lado a lado */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Links do menu em linha (por padrão, os li ficariam um embaixo do outro) */
+.menu__lista {
+    display: flex;
+    gap: 32px;
+}
+
+/* Tamanho fixo para o botão aparecer mesmo sem ícone */
+.botao-tema {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ---------- 6. HERO ----------
+   Duas colunas: texto (esquerda) e janela de código (direita). */
+.hero__conteudo {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+/* flex: 1 = "divida o espaço igualmente".
+   As duas colunas ficam com a mesma largura. */
+.hero__texto,
+.janela-codigo {
+    flex: 1;
+}
+
+/* Os blocos de texto do hero (tag, título, subtítulo...) ficam empilhados.
+   O gap cria o espaço entre eles. */
+.hero__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Botões lado a lado */
+.botoes {
+    display: flex;
+    gap: 16px;
+}
+
+/* padding dá "corpo" ao link, para parecer um botão */
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+}
+
+/* Três métricas lado a lado */
+.metricas {
+    display: flex;
+    gap: 32px;
+}
+
+/* Dentro de cada métrica: número em cima, texto embaixo.
+   flex-direction: column muda a direção do flex para vertical. */
+.metrica {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+/* Barra da janela: pontinhos à esquerda, nome do arquivo ao lado */
+.janela-codigo__barra {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+}
+
+/* Os três pontinhos em linha */
+.pontinhos {
+    display: flex;
+    gap: 6px;
+}
+
+/* Um span vazio não tem tamanho; aqui damos 10x10px para ele aparecer */
+.pontinho {
+    width: 10px;
+    height: 10px;
+}
+
+/* Espaço interno da área do código */
+.janela-codigo pre {
+    padding: 24px 16px;
+}
+
+
+/* ---------- 7. SOBRE MIM ----------
+   Foto (esquerda) e texto (direita). */
+.sobre__conteudo {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+/* A foto ocupa 1 parte e o texto 1,5 parte do espaço disponível */
+.sobre__foto {
+    flex: 1;
+}
+
+/* Dentro do texto: itens empilhados, com espaço entre eles */
+.sobre__texto {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Selo logo abaixo da foto (sem position absolute) */
+.selo {
+    padding: 8px 12px;
+}
+
+/* Badges em linha. flex-wrap: wrap deixa elas "quebrarem"
+   para a linha de baixo quando não couberem. */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.badge {
+    padding: 6px 12px;
+}
+
+
+/* ---------- 8. CABEÇALHO PADRÃO DAS SEÇÕES ----------
+   Usado em Serviços, Portfólio e Processo. */
+.secao__cabecalho {
+    max-width: 640px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* ---------- 9. SERVIÇOS ----------
+   Três cards lado a lado, com a mesma largura. */
+.cards {
+    display: flex;
+    gap: 24px;
+}
+
+/* Cada card: flex: 1 (mesma largura) e, por dentro,
+   os itens empilhados na vertical (ícone, título, texto, link). */
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 24px;
+}
+
+
+/* ---------- 10. PORTFÓLIO ----------
+   Layout assimétrico: [projeto grande] [coluna com 2 projetos]. */
+.projetos__layout {
+    display: flex;
+    gap: 24px;
+}
+
+/* O projeto grande ocupa o DOBRO do espaço da coluna da direita.
+   É o flex: 2 contra flex: 1 que cria a assimetria. */
+.projeto--grande {
+    flex: 2;
+}
+
+/* A coluna da direita empilha os dois projetos na vertical */
+.projetos__coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cada projeto: preview em cima, informações embaixo */
+.projeto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Altura mínima para o preview aparecer mesmo vazio */
+.projeto__preview {
+    min-height: 140px;
+    padding: 16px;
+}
+
+/* No projeto grande, o preview é mais alto e mostra
+   as duas mini-caixas lado a lado */
+.projeto--grande .projeto__preview {
+    min-height: 300px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* Cada mini-caixa: textos empilhados na vertical */
+.mini-caixa {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px;
+}
+
+.projeto__info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* ---------- 11. MEU PROCESSO ----------
+   Quatro passos lado a lado, todos com a mesma largura. */
+.passos {
+    display: flex;
+    gap: 24px;
+}
+
+.passo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+}
+
+
+/* ---------- 12. CONTATO ----------
+   Texto (esquerda) e canais de contato (direita). */
+.contato__conteudo {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.contato__texto,
+.contato__canais {
+    flex: 1;
+}
+
+/* Tag, título e texto empilhados */
+.contato__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Os dois canais empilhados, um embaixo do outro */
+.contato__canais {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Cada canal (link): ícone, rótulo e valor empilhados */
+.canal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px 24px;
+}
+
+
+/* ---------- 13. RODAPÉ ----------
+   Texto à esquerda, redes sociais à direita. */
+.rodape {
+    padding: 32px 0;
+}
+
+.rodape__conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Links das redes sociais em linha */
+.redes {
+    display: flex;
+    gap: 20px;
+}
