@@ -1,30 +1,14 @@
-/* =============================================================
-   WIREFRAME.CSS — CSS TEMPORÁRIO DA FASE 1
-   Objetivo: enxergar o "esqueleto" da página.
-   Aqui só existe: reset, container, flexbox, espaçamentos e contornos.
-   NÃO tem cores, fundos, sombras nem bordas arredondadas (isso é Fase 3).
-   ============================================================= */
-
-
-/* ---------- 1. RESET ----------
-   O asterisco (*) seleciona TODOS os elementos.
-   - margin e padding: 0 tiram os espaços que o navegador coloca sozinho.
-   - box-sizing: border-box faz a largura incluir o padding e a borda,
-     assim uma caixa de 300px continua com 300px mesmo com padding. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Tira as bolinhas/números das listas (ul e ol).
-   Usamos listas pela semântica, não pela aparência. */
 ul,
 ol {
     list-style: none;
 }
 
-/* Faz a imagem nunca ficar maior que a caixa onde ela está */
 img {
     display: block;
     max-width: 100%;

@@ -1,0 +1,56 @@
+/* =============================================================
+   RODAPE.CSS — RODAPÉ (footer)
+   Fundo escuro: direitos autorais à esquerda, redes sociais à direita.
+   ============================================================= */
+
+
+/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
+   O rodapé tem a mesma cor do contato, então uma linha fina
+   em cima (border-top) separa as duas partes. */
+.rodape {
+    background: var(--cor-escura);
+    color: var(--branco);
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ---------- 2. LAYOUT ----------
+   space-between: texto numa ponta, redes sociais na outra. */
+.rodape__conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.rodape p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+
+/* ---------- 3. REDES SOCIAIS ---------- */
+.redes {
+    display: flex;
+    gap: 16px;
+}
+
+/* Cada link vira um círculo de 40px com o ícone no meio */
+.redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* Ao passar o mouse, o círculo fica terracota */
+.redes a:hover {
+    background: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}

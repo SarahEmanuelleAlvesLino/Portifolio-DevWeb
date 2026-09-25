@@ -1,0 +1,69 @@
+/* =============================================================
+   RESPONSIVO.CSS — AJUSTES PARA TELAS PEQUENAS (celular)
+   Fica por ÚLTIMO no style.css: quando duas regras têm a mesma
+   força, vale a que vem depois. Assim estas regras vencem as dos módulos.
+   ============================================================= */
+
+/* @media = "aplique estas regras só SE a condição for verdadeira".
+   max-width: 768px = só quando a tela tiver 768px de largura ou menos. */
+@media (max-width: 768px) {
+
+    /* ---------- 1. TUDO EM COLUNA ----------
+       O layout inteiro já é feito com flex. Para o celular, basta
+       trocar a direção de "linha" (lado a lado) para "coluna" (um embaixo do outro).
+       align-items: stretch faz cada bloco ocupar a largura toda
+       (sem isso, os blocos que estavam com "center" ou "flex-start"
+       ficariam estreitos, do tamanho do próprio conteúdo). */
+    .hero__conteudo,
+    .sobre__conteudo,
+    .cards,
+    .projetos__layout,
+    .projetos__coluna,
+    .passos,
+    .contato__conteudo,
+    .rodape__conteudo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Botões e métricas do hero podem "quebrar" para a linha de baixo
+       se não couberem na largura do celular */
+    .botoes,
+    .metricas {
+        flex-wrap: wrap;
+    }
+
+
+    /* ---------- 2. MENU ----------
+       Simplificação: o menu some no celular.
+       (Um menu "hambúrguer" exigiria mais JavaScript.) */
+    .menu__lista {
+        display: none;
+    }
+
+
+    /* ---------- 3. TAMANHOS MENORES ----------
+       Os seletores são IGUAIS aos dos módulos (ex.: ".hero h1").
+       Com a mesma força, vence a regra que vem depois, ou seja, esta.
+       Se escrevêssemos só "h2", a regra perderia para ".contato__texto h2",
+       que é mais específica (tem uma classe). */
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .secao__cabecalho h2,
+    .sobre__texto h2,
+    .contato__texto h2 {
+        font-size: 30px;
+    }
+
+    .sobre__foto img {
+        height: 320px;
+    }
+
+    /* No rodapé em coluna, centralizar o texto fica mais bonito */
+    .rodape__conteudo {
+        align-items: center;
+        text-align: center;
+    }
+}

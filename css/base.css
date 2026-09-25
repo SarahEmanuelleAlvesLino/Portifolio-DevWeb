@@ -1,0 +1,106 @@
+/* =============================================================
+   BASE.CSS — A FUNDAÇÃO DO SITE
+   Aqui ficam as regras que valem para a página INTEIRA:
+   cores, reset, fonte, container e tipografia.
+   Nada específico de uma seção entra aqui.
+   ============================================================= */
+
+
+/* ---------- 1. VARIÁVEIS DE COR ----------
+   :root é o elemento mais alto da página (o <html>).
+   Variáveis criadas aqui podem ser usadas em qualquer lugar com var(--nome).
+   Vantagem: se eu quiser trocar uma cor, mudo só aqui e o site todo muda. */
+:root {
+    /* 4 cores da paleta pastel */
+    --cor-escura:   #366775;   /* teal escuro: fundos escuros e títulos */
+    --cor-suave:    #A2B4C0;   /* azul-acinzentado: bordas e detalhes */
+    --cor-pessego:  #F4AC94;   /* pêssego: destaques suaves e degradês */
+    --cor-primaria: #D66D50;   /* terracota: cor de ação (botões, links) */
+
+    /* Cores neutras: fundo e textos */
+    --cor-fundo:    #fbf6f2;   /* off-white: fundo das seções claras */
+    --cor-texto:    #24343a;   /* texto principal (títulos) */
+    --cor-texto-2:  #6b8592;   /* texto secundário (parágrafos) */
+    --branco:       #ffffff;
+
+    /* Cor das "superfícies" (cards, caixas). Começa branca, mas no
+       tema escuro ela muda (veja tema-escuro.css). Por isso os cards
+       usam esta variável, e não --branco. */
+    --cor-superficie: #ffffff;   /* cor dos cards */
+}
+
+
+/* ---------- 2. RESET ----------
+   O asterisco (*) seleciona TODOS os elementos.
+   - margin e padding: 0 tiram os espaços que o navegador coloca sozinho.
+   - box-sizing: border-box faz a largura incluir o padding e a borda. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tira as bolinhas/números das listas (usamos listas pela semântica) */
+ul,
+ol {
+    list-style: none;
+}
+
+/* A imagem nunca fica maior que a caixa onde ela está */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- 3. PÁGINA ---------- */
+
+/* Rolagem suave: ao clicar num link do menu (#sobre, #contato...),
+   a página "desliza" até a seção em vez de pular de uma vez */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Configurações gerais do corpo da página.
+   - font-family: Poppins; se ela não carregar, usa a fonte sem serifa do sistema.
+   - line-height: 1.6 = altura da linha 1,6x o tamanho da letra (leitura confortável). */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+
+/* ---------- 4. CONTAINER ----------
+   Centraliza o conteúdo e limita a largura em telas grandes.
+   margin: 0 auto = 0 em cima/embaixo e "auto" nas laterais (centraliza). */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ---------- 5. TIPOGRAFIA BASE ---------- */
+
+/* Títulos: mais grossos e com linhas mais "juntinhas" que o texto comum */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--cor-texto);
+}
+
+/* Parágrafos usam a cor secundária (mais clara que os títulos) */
+p {
+    color: var(--cor-texto-2);
+}
+
+/* Links: sem sublinhado e com a mesma cor do elemento "pai".
+   "inherit" = herdar a cor de quem está em volta. */
+a {
+    text-decoration: none;
+    color: inherit;
+}

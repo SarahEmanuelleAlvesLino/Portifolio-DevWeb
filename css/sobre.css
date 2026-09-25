@@ -1,0 +1,102 @@
+/* =============================================================
+   SOBRE.CSS — SEÇÃO "SOBRE MIM" (#sobre)
+   Foto à esquerda (com selo flutuante) e texto à direita.
+   ============================================================= */
+
+
+/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+.sobre {
+    background: var(--cor-fundo);
+    padding: 100px 0;
+}
+
+
+/* ---------- 2. DUAS COLUNAS ----------
+   Foto e texto lado a lado, alinhados pelo meio na vertical. */
+.sobre__conteudo {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+
+/* ---------- 3. FOTO ----------
+   position: relative transforma a foto no "ponto de referência"
+   para o selo, que vai usar position: absolute logo abaixo. */
+.sobre__foto {
+    flex: 1;
+    position: relative;
+}
+
+/* object-fit: cover faz a imagem preencher os 480px de altura
+   sem ficar esticada ou achatada (ela é cortada nas bordas, se preciso). */
+.sobre__foto img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/* ---------- 4. SELO "DISPONÍVEL" ----------
+   - position: absolute tira o selo do fluxo normal e posiciona ele
+     em relação à foto (o pai com position: relative).
+   - bottom: 16px e left: 16px = 16px acima da borda de baixo
+     e 16px à direita da borda esquerda da foto.
+   - O fundo usa --cor-superficie (e não --branco) para o selo
+     acompanhar o tema escuro junto com o texto. */
+.selo {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ::before cria um elemento "de mentira" ANTES do texto do selo,
+   sem precisar escrever nada no HTML. content: "" é obrigatório
+   para ele aparecer. Aqui ele vira um pontinho verde de "disponível". */
+.selo::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+}
+
+
+/* ---------- 5. TEXTO ----------
+   flex: 1.5 = o texto ocupa 1,5 vez o espaço da foto. */
+.sobre__texto {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Mesmo tamanho dos outros títulos de seção */
+.sobre__texto h2 {
+    font-size: 40px;
+}
+
+/* "design com significado." em terracota (seção de fundo claro) */
+.sobre__texto h2 span {
+    color: var(--cor-primaria);
+}
+
+/* Os badges (JavaScript, React...) em linha.
+   flex-wrap: wrap deixa eles "quebrarem" para a linha de baixo
+   quando não couberem. A aparência de cada badge vem do componentes.css. */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}

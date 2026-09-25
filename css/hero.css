@@ -1,0 +1,170 @@
+/* =============================================================
+   HERO.CSS — SEÇÃO DE DESTAQUE (#hero)
+   Layout (flex) + formatação: fundo teal escuro, título grande,
+   botões, métricas e a "janela" de código.
+   ============================================================= */
+
+
+/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
+   O padding de cima (140px) é maior que o de baixo (100px) porque
+   o cabeçalho fixo fica por cima do começo desta seção. */
+.hero {
+    background-color: var(--cor-escura);
+    color: var(--branco);
+    padding: 140px 0 100px;
+}
+
+
+/* ---------- 2. DUAS COLUNAS ----------
+   Texto à esquerda, janela de código à direita.
+   flex: 1 nas duas = as colunas dividem o espaço igualmente. */
+.hero__conteudo {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.hero__texto,
+.janela-codigo {
+    flex: 1;
+}
+
+
+/* ---------- 3. COLUNA DE TEXTO ---------- */
+
+/* Tag, título, subtítulo, botões e métricas empilhados, com 20px entre eles */
+.hero__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Título principal: bem grande e branco */
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.05;
+    color: var(--branco);
+}
+
+/* "vida digital." em pêssego, para chamar atenção */
+.hero h1 span {
+    color: var(--cor-pessego);
+}
+
+/* max-width limita a largura do texto, para as linhas não ficarem longas demais */
+.subtitulo {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    max-width: 480px;
+}
+
+/* Os dois botões lado a lado */
+.botoes {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+
+/* ---------- 4. MÉTRICAS ---------- */
+
+/* Três métricas lado a lado */
+.metricas {
+    display: flex;
+    gap: 40px;
+    margin-top: 24px;
+}
+
+/* Em cada métrica: número em cima, texto embaixo */
+.metrica {
+    display: flex;
+    flex-direction: column;
+}
+
+.metrica strong {
+    font-size: 32px;
+    color: var(--branco);
+}
+
+.metrica span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+
+/* ---------- 5. JANELA DE CÓDIGO ----------
+   - rgba(0, 0, 0, 0.2) = preto com 20% de opacidade: escurece
+     um pouco o fundo teal, sem esconder ele.
+   - border-radius: 14px arredonda os cantos da janela.
+   - overflow: hidden corta o que passar dos cantos arredondados.
+   - box-shadow cria uma sombra: 0 (deslocamento para o lado),
+     20px (deslocamento para baixo), 50px (quanto a sombra "espalha"
+     e fica borrada) e a cor da sombra (preto com 30%).
+     Isso dá a impressão de que a janela "flutua". */
+.janela-codigo {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Barra de cima: pontinhos + nome do arquivo, com uma linha fina embaixo */
+.janela-codigo__barra {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Nome do arquivo ("luis.dev").
+   O ">" pega só o span que é filho DIRETO da barra, e não os spans
+   dos pontinhos (que estão um nível mais dentro).
+   margin-left: auto "empurra" o nome para a ponta direita da barra. */
+.janela-codigo__barra > span {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+/* Os três pontinhos em linha */
+.pontinhos {
+    display: flex;
+    gap: 6px;
+}
+
+/* Cada pontinho: quadrado de 12px que vira círculo com border-radius: 50% */
+.pontinho {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* :nth-child(n) escolhe o filho pela posição (1º, 2º, 3º).
+   Assim cada pontinho recebe uma cor diferente sem precisar de classes extras.
+   São as cores clássicas de janela: fechar, minimizar e maximizar. */
+.pontinho:nth-child(1) {
+    background: #ff5f57;   /* vermelho */
+}
+
+.pontinho:nth-child(2) {
+    background: #febc2e;   /* amarelo */
+}
+
+.pontinho:nth-child(3) {
+    background: #28c840;   /* verde */
+}
+
+/* Espaço interno em volta do código */
+.janela-codigo pre {
+    padding: 24px 20px;
+}
+
+/* Fonte "monospace": todas as letras têm a mesma largura, como nos editores de código */
+.janela-codigo code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}

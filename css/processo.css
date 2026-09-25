@@ -1,0 +1,50 @@
+/* =============================================================
+   PROCESSO.CSS — SEÇÃO "MEU PROCESSO" (#processo)
+   Quatro passos lado a lado, cada um com uma linha em cima.
+   ============================================================= */
+
+
+/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+.processo {
+    background: var(--cor-fundo);
+    padding: 100px 0;
+}
+
+
+/* ---------- 2. LINHA DE PASSOS ---------- */
+.passos {
+    display: flex;
+    gap: 24px;
+}
+
+
+/* ---------- 3. PASSO ----------
+   flex: 1 = os quatro passos com a mesma largura.
+   border-top desenha uma linha só em cima de cada passo,
+   como uma "linha do tempo" dividida em etapas. */
+.passo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 2px solid var(--cor-suave);
+    padding-top: 20px;
+}
+
+/* Número do passo (01, 02...) em terracota */
+.passo__numero {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.passo h3 {
+    color: var(--cor-texto);
+    font-size: 18px;
+}
+
+.passo p {
+    color: var(--cor-texto-2);
+    line-height: 1.6;
+    font-size: 15px;
+}

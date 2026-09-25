@@ -1,0 +1,28 @@
+/* =============================================================
+   STYLE.CSS — ARQUIVO PRINCIPAL
+   Este arquivo NÃO tem estilos próprios: ele só "junta" os módulos
+   da pasta css/ usando @import. A ORDEM importa: os arquivos de baixo
+   podem sobrescrever regras dos arquivos de cima.
+   ============================================================= */
+
+/* 1. Fundação: variáveis de cor, reset, fonte e tipografia */
+@import url('css/base.css');
+
+/* 2. Peças reutilizáveis: tag, botões, badges */
+@import url('css/componentes.css');
+
+/* 3. Seções da página (uma por arquivo) */
+@import url('css/cabecalho.css');
+@import url('css/hero.css');
+@import url('css/sobre.css');
+@import url('css/servicos.css');
+@import url('css/projetos.css');
+@import url('css/processo.css');
+@import url('css/contato.css');
+@import url('css/rodape.css');
+
+/* 4. Tema escuro: só troca os valores das variáveis de cor */
+@import url('css/tema-escuro.css');
+
+/* 5. Ajustes para telas menores (fica por último para vencer as regras anteriores) */
+@import url('css/responsivo.css');

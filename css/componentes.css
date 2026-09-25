@@ -1,0 +1,98 @@
+/* =============================================================
+   COMPONENTES.CSS — PEÇAS REUTILIZÁVEIS
+   São "peças" que aparecem em várias seções: tag, botões e badges.
+   Aqui fica só a APARÊNCIA delas. O posicionamento de cada seção
+   fica no arquivo da própria seção.
+   ============================================================= */
+
+
+/* ---------- 1. TAG ----------
+   Pequeno texto acima dos títulos (ex.: "SOBRE MIM", "PORTFÓLIO").
+   - text-transform: uppercase garante letras maiúsculas.
+   - letter-spacing afasta um pouco as letras umas das outras. */
+.tag {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cor-primaria);
+}
+
+
+/* ---------- 2. BOTÃO (BASE) ----------
+   Regras comuns a TODOS os botões.
+   - display: inline-flex deixa o texto e o ícone lado a lado,
+     e align-items: center alinha os dois pelo meio.
+   - gap: espaço entre o texto e o ícone.
+   - border-radius: arredonda os cantos.
+   - cursor: pointer mostra a "mãozinha" ao passar o mouse. */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* ---------- 3. BOTÃO PRIMÁRIO ----------
+   A ação principal: fundo terracota com texto branco.
+   A borda tem a mesma cor do fundo só para ele ficar
+   com a mesma altura do botão secundário (que tem borda). */
+.botao--primario {
+    background-color: var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+    color: var(--branco);
+}
+
+/* :hover = quando o mouse está em cima do botão.
+   #b9563b é um tom um pouco mais escuro do terracota. */
+.botao--primario:hover {
+    background-color: #b9563b;
+    border-color: #b9563b;
+}
+
+
+/* ---------- 4. BOTÃO SECUNDÁRIO ----------
+   A ação de apoio: sem fundo, só com contorno.
+   Ele fica sobre o fundo escuro do hero, por isso a borda e o texto claros.
+   rgba(255, 255, 255, 0.5) = branco com 50% de transparência. */
+.botao--secundario {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--branco);
+}
+
+
+/* ---------- 5. CABEÇALHO DAS SEÇÕES ----------
+   Bloco com tag + título + texto de apoio, usado em Serviços,
+   Portfólio e Processo. Fica aqui porque se repete em várias seções.
+   - max-width deixa as linhas de texto mais curtas (melhor leitura).
+   - flex-direction: column empilha os itens; gap cria o espaço entre eles. */
+.secao__cabecalho {
+    max-width: 640px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Título das seções. Sem esta regra, o h2 ficaria com o tamanho
+   padrão do navegador (24px), pequeno demais para um título de seção. */
+.secao__cabecalho h2 {
+    font-size: 40px;
+}
+
+
+/* ---------- 6. BADGE ----------
+   Etiqueta das tecnologias (JavaScript, React...).
+   border-radius: 20px deixa as pontas redondas (formato de "pílula"). */
+.badge {
+    border: 1px solid var(--cor-suave);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--cor-texto);
+}

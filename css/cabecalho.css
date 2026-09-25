@@ -1,0 +1,106 @@
+/* =============================================================
+   CABECALHO.CSS — CABEÇALHO FIXO NO TOPO
+   Layout (flex) + formatação (cores e fundo) do <header class="cabecalho">.
+   ============================================================= */
+
+
+/* ---------- 1. AJUSTE DA ROLAGEM ----------
+   Como o cabeçalho fica fixo por cima da página, ao clicar num link
+   do menu o começo da seção ficaria escondido atrás dele.
+   scroll-padding-top faz a rolagem "parar" 90px antes, deixando espaço
+   para o cabeçalho. */
+html {
+    scroll-padding-top: 90px;
+}
+
+
+/* ---------- 2. CAIXA DO CABEÇALHO ----------
+   - position: fixed "gruda" o cabeçalho na tela: ele não sai do lugar
+     quando a página rola. top: 0, left: 0 e right: 0 prendem ele no topo,
+     de uma ponta à outra.
+   - z-index controla quem fica "na frente" quando elementos se sobrepõem.
+     Quanto maior o número, mais à frente. 1000 garante que o cabeçalho
+     fique por cima de todo o conteúdo que passa por baixo dele. */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--cor-escura);
+    padding: 16px 0;
+}
+
+/* Logo | menu | botão de tema na mesma linha.
+   space-between empurra os itens para as pontas;
+   align-items: center alinha tudo pelo meio, na vertical. */
+.cabecalho__conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+
+/* ---------- 3. LOGO ---------- */
+
+/* Ícone e nome lado a lado */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* O ícone </> vira um "quadradinho" terracota.
+   border-radius arredonda os cantos da caixa (8px de curva). */
+.logo i {
+    background-color: var(--cor-primaria);
+    color: var(--branco);
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+
+/* ---------- 4. MENU ---------- */
+
+/* Links do menu em linha */
+.menu__lista {
+    display: flex;
+    gap: 32px;
+}
+
+/* rgba(255, 255, 255, 0.8) = branco com 80% de opacidade.
+   Os 3 primeiros números são vermelho, verde e azul (0 a 255);
+   o 4º é a transparência (0 = invisível, 1 = totalmente visível).
+   Assim o link fica um branco "mais apagado". */
+.menu__lista a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+/* Ao passar o mouse, o link fica branco puro */
+.menu__lista a:hover {
+    color: var(--branco);
+}
+
+
+/* ---------- 5. BOTÃO DE TEMA ----------
+   border-radius: 50% transforma o quadrado de 40x40 num círculo.
+   O flex com justify-content e align-items em "center"
+   coloca a lua bem no meio do círculo. */
+.botao-tema {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--branco);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

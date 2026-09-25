@@ -1,44 +1,33 @@
 <!DOCTYPE html>
-<!-- lang="pt-BR" avisa ao navegador (e aos leitores de tela) que a página está em português -->
 <html lang="pt-BR">
 
 <head>
-    <!-- charset UTF-8 permite usar acentos (ç, ã, é...) sem problemas -->
     <meta charset="UTF-8">
-    <!-- viewport faz a página se ajustar à largura da tela do celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Nome | Desenvolvedor Freelancer</title>
+    <title>Sarah Emanuelle | Desenvolvedor Freelancer</title>
 
-    <!-- Font Awesome (Fase 2): biblioteca de ícones carregada pela internet (CDN).
-         Depois dela, basta escrever <i class="fa-solid fa-nome"></i> para mostrar um ícone. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CSS temporário da Fase 1: só contornos, para enxergar o esqueleto da página -->
-    <link rel="stylesheet" href="wireframe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================================
-         CABEÇALHO
-         Fica no topo da página: logo, menu de navegação e botão de tema.
-         ========================================================= -->
+    <!-- CABEÇALHO -->
     <header class="cabecalho">
-        <!-- .container centraliza o conteúdo e limita a largura -->
         <div class="container cabecalho__conteudo">
 
-            <!-- Logo: um link que leva de volta ao topo (#hero) -->
+            <!-- Leva para o início da página -->
             <a href="#hero" class="logo">
-                <!-- Ícone de código "</>", que representa programação -->
                 <i class="fa-solid fa-code"></i>
-                <span>Seu Nome</span>
+                <span>Sarah Emanuelle</span>
             </a>
 
-            <!-- nav = área de navegação principal do site -->
+            <!--navegação -->
             <nav class="menu">
-                <!-- ul = lista não ordenada; cada li é um item do menu -->
                 <ul class="menu__lista">
-                    <!-- o href="#id" faz a página rolar até a seção com aquele id -->
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
@@ -46,58 +35,54 @@
                 </ul>
             </nav>
 
-            <!-- Botão para trocar o tema (claro/escuro). Só vai funcionar com JavaScript, no fim. -->
-            <!-- type="button" indica que ele não envia formulário -->
+            <!-- Tema Dark/Light Mode -->
             <button type="button" class="botao-tema" aria-label="Trocar tema">
-                <!-- Ícone de lua: símbolo comum para "tema escuro" -->
                 <i class="fa-solid fa-moon"></i>
             </button>
 
         </div>
     </header>
 
-    <!-- main = conteúdo principal da página (tudo que não é cabeçalho nem rodapé) -->
+    <!-- parte principal da pagina (sem rodapé e cabeçalho) -->
     <main>
 
-        <!-- =========================================================
-             HERO (destaque)
-             Primeira coisa que o visitante vê: texto à esquerda, código à direita.
-             ========================================================= -->
         <section id="hero" class="hero">
             <div class="container hero__conteudo">
 
-                <!-- Coluna da esquerda: textos, botões e métricas -->
+                <!-- textos, botões e métricas -->
                 <div class="hero__texto">
-                    <!-- "tag" = pequeno texto de categoria acima do título -->
-                    <p class="tag">DESENVOLVEDOR FREELANCER</p>
+                    <p 
+                        class="tag">DESENVOLVEDOR FREELANCER
+                    </p>
 
-                    <!-- h1 = título mais importante da página (só existe um h1) -->
-                    <!-- o span separa "vida digital." para podermos destacar com cor na Fase 3 -->
-                    <h1>Ideias que ganham <span>vida digital.</span></h1>
+                    <h1>
+                        Ideias que ganham <span>vida digital.</span>
+                    </h1>
 
                     <p class="subtitulo">
                         Desenvolvo sistemas web, aplicações desktop e aplicativos mobile para
                         transformar desafios reais em soluções simples, eficientes e bonitas.
                     </p>
 
-                    <!-- Dois links com cara de botão, lado a lado -->
+                    <!-- botões embaixo do texto, que leva para contato e portifolio -->
                     <div class="botoes">
-                        <!-- Seta saindo da caixa: indica "ir para outro lugar" (a seção de projetos) -->
-                        <a href="#projetos" class="botao">
+
+                        <a href="#projetos" class="botao botao--primario">
                             Conheça meu trabalho
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
-                        <a href="#contato" class="botao">Vamos conversar</a>
+
+                        <a href="#contato" class="botao botao--secundario">Vamos conversar</a>
                     </div>
 
-                    <!-- Métricas: três números lado a lado -->
+                    <!-- metricas -->
                     <ul class="metricas">
                         <li class="metrica">
-                            <strong>6+</strong>
+                            <strong>2+</strong>
                             <span>anos de experiência</span>
                         </li>
                         <li class="metrica">
-                            <strong>42</strong>
+                            <strong>20</strong>
                             <span>projetos entregues</span>
                         </li>
                         <li class="metrica">
@@ -107,7 +92,7 @@
                     </ul>
                 </div>
 
-                <!-- Coluna da direita: uma "janela" de editor de código -->
+                <!-- Código que aparece do lado do titulo -->
                 <div class="janela-codigo">
                     <!-- Barra de cima da janela: 3 pontinhos + nome do arquivo -->
                     <div class="janela-codigo__barra">
@@ -116,11 +101,9 @@
                             <span class="pontinho"></span>
                             <span class="pontinho"></span>
                         </div>
-                        <span>luis.dev</span>
+                        <span>sarah.dev</span>
                     </div>
 
-                    <!-- pre mantém os espaços e quebras de linha exatamente como foram escritos -->
-                    <!-- code indica que o texto é código de programação -->
 <pre><code>const solution = {
   idea: 'transformadora',
   design: 'intuitivo',
@@ -132,16 +115,13 @@
             </div>
         </section>
 
-        <!-- =========================================================
-             SOBRE MIM
-             Foto à esquerda, apresentação à direita.
-             ========================================================= -->
+        <!-- SOBRE MIM -->
         <section id="sobre" class="sobre">
             <div class="container sobre__conteudo">
 
                 <!-- figure agrupa a imagem com o selo que a acompanha -->
                 <figure class="sobre__foto">
-                    <img src="assets/foto.jpg" alt="Foto de perfil">
+                    <img src="assets/SobreMim/IMG_1099.JPEG" alt="Foto de perfil">
                     <!-- figcaption = legenda da figura (aqui usamos como "selo") -->
                     <figcaption class="selo">Disponível para novos projetos</figcaption>
                 </figure>
@@ -154,12 +134,12 @@
                     <h2>Tecnologia com propósito, <span>design com significado.</span></h2>
 
                     <p>
-                        Sou desenvolvedor freelancer e ajudo pessoas e empresas a tirarem ideias
+                        Sou estudante de Bacharelado em Ciência da Computação e desenvolvedora freelancer e ajudo pessoas e empresas a tirarem ideias
                         do papel com soluções digitais sob medida.
                     </p>
                     <p>
                         Gosto de unir código bem feito a interfaces claras, sempre pensando em
-                        quem vai usar o sistema no dia a dia.
+                        quem vai usar o sistema no dia a dia, .
                     </p>
 
                     <!-- Badges = etiquetas com as tecnologias que eu uso -->
@@ -390,8 +370,11 @@
                     <a href="mailto:contato@luis.dev" class="canal">
                         <!-- Ícone de arroba (@): representa e-mail -->
                         <i class="fa-solid fa-at"></i>
-                        <span class="canal__rotulo">Escreva para mim</span>
-                        <span class="canal__valor">contato@luis.dev</span>
+                        <!-- canal__textos agrupa rótulo + valor, para ficarem um embaixo do outro -->
+                        <span class="canal__textos">
+                            <span class="canal__rotulo">Escreva para mim</span>
+                            <span class="canal__valor">contato@luis.dev</span>
+                        </span>
                         <!-- Seta saindo da caixa: indica que o link abre outro programa -->
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
@@ -401,8 +384,10 @@
                     <a href="https://wa.me/5538912341234" class="canal" target="_blank" rel="noopener">
                         <!-- Logo do WhatsApp (é uma marca, por isso usa "fa-brands") -->
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span class="canal__rotulo">Chame no WhatsApp</span>
-                        <span class="canal__valor">(38) 91234-1234</span>
+                        <span class="canal__textos">
+                            <span class="canal__rotulo">Chame no WhatsApp</span>
+                            <span class="canal__valor">(38) 91234-1234</span>
+                        </span>
                         <!-- Seta saindo da caixa: indica que o link abre o WhatsApp -->
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
@@ -449,6 +434,11 @@
 
         </div>
     </footer>
+
+    <!-- JavaScript do botão de tema (claro/escuro).
+         Fica no final do body para carregar DEPOIS do HTML: assim o botão já existe
+         quando o script procurar por ele. -->
+    <script src="script.js"></script>
 
 </body>
 

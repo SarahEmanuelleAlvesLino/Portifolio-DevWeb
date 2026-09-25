@@ -1,0 +1,101 @@
+/* =============================================================
+   SERVICOS.CSS — SEÇÃO "SERVIÇOS" (#servicos)
+   Três cards lado a lado; o do meio é destacado em terracota.
+   ============================================================= */
+
+
+/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+.servicos {
+    background: var(--cor-fundo);
+    padding: 100px 0;
+}
+
+
+/* ---------- 2. LINHA DE CARDS ---------- */
+.cards {
+    display: flex;
+    gap: 24px;
+}
+
+
+/* ---------- 3. CARD ----------
+   flex: 1 = os três cards com a mesma largura.
+   Por dentro, os itens ficam empilhados (ícone, título, texto, link).
+   A sombra é bem fraquinha (5% de preto), só para "descolar" o card do fundo. */
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 24px;
+    background: var(--cor-superficie);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Ícone do card, dentro de um quadradinho com cantos arredondados.
+   O ">" pega só o ícone que é filho DIRETO do card, e não a setinha
+   que fica dentro do link "Saiba mais".
+   rgba(214, 109, 80, 0.12) é o terracota (214, 109, 80) com 12% de opacidade:
+   um fundo bem clarinho da mesma cor do ícone. */
+.card > i {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: rgba(214, 109, 80, 0.12);
+    color: var(--cor-primaria);
+}
+
+.card h3 {
+    color: var(--cor-texto);
+    font-size: 20px;
+}
+
+/* flex-grow: 1 faz o parágrafo "crescer" e ocupar o espaço que sobra.
+   Assim o link "Saiba mais" fica sempre no fundo do card, alinhado
+   nos três cards, mesmo que os textos tenham tamanhos diferentes. */
+.card p {
+    color: var(--cor-texto-2);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Link "Saiba mais" + seta, lado a lado */
+.card a {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* ---------- 4. CARD EM DESTAQUE (o do meio) ----------
+   As regras abaixo SOBRESCREVEM as do card comum,
+   trocando as cores para texto claro sobre fundo terracota. */
+.card--destaque {
+    background: var(--cor-primaria);
+    color: var(--branco);
+}
+
+.card--destaque h3 {
+    color: var(--branco);
+}
+
+.card--destaque p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.card--destaque a {
+    color: var(--branco);
+}
+
+.card--destaque > i {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--branco);
+}
