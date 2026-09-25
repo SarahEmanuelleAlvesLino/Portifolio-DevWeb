@@ -1,12 +1,3 @@
-/* =============================================================
-   TEMA-ESCURO.CSS — O "PULO DO GATO" DO DARK MODE
-   Este arquivo NÃO reescreve nenhuma seção. Ele só troca o VALOR
-   de algumas variáveis quando o <body> tem a classe "tema-escuro"
-   (quem coloca e tira essa classe é o script.js).
-   Como todas as regras do site usam var(--...), o site inteiro
-   muda de cor automaticamente.
-   ============================================================= */
-
 body.tema-escuro {
     --cor-fundo:      #14232a;   /* fundo das seções: teal bem escuro */
     --cor-superficie: #1e333b;   /* cards: um pouco mais claros que o fundo */
@@ -14,7 +5,4 @@ body.tema-escuro {
     --cor-texto-2:    #9fb3bc;   /* parágrafos: cinza-azulado claro */
     --cor-suave:      #3a5560;   /* bordas e linhas: mais escuras */
 
-    /* --cor-escura, --cor-primaria, --cor-pessego e --branco NÃO mudam:
-       o hero, o contato e o rodapé continuam teal com texto branco
-       nos dois temas. */
 }

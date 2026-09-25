@@ -5,9 +5,7 @@
    ============================================================= */
 
 
-/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
-   O padding de cima (140px) é maior que o de baixo (100px) porque
-   o cabeçalho fixo fica por cima do começo desta seção. */
+/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
 .hero {
     background-color: var(--cor-escura);
     color: var(--branco);
@@ -15,9 +13,7 @@
 }
 
 
-/* ---------- 2. DUAS COLUNAS ----------
-   Texto à esquerda, janela de código à direita.
-   flex: 1 nas duas = as colunas dividem o espaço igualmente. */
+/* ---------- 2. DUAS COLUNAS ----------*/
 .hero__conteudo {
     display: flex;
     align-items: center;

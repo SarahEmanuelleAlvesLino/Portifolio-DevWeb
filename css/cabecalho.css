@@ -33,7 +33,7 @@ html {
 
 /* Logo | menu | botão de tema na mesma linha.
    space-between empurra os itens para as pontas;
-   align-items: center alinha tudo pelo meio, na vertical. */
+   align-items: center alinha tudo pelo meio, na vertical.*/
 .cabecalho__conteudo {
     display: flex;
     justify-content: space-between;

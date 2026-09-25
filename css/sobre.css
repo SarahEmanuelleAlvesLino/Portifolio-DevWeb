@@ -1,9 +1,3 @@
-/* =============================================================
-   SOBRE.CSS — SEÇÃO "SOBRE MIM" (#sobre)
-   Foto à esquerda (com selo flutuante) e texto à direita.
-   ============================================================= */
-
-
 /* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
 .sobre {
     background: var(--cor-fundo);
@@ -20,16 +14,12 @@
 }
 
 
-/* ---------- 3. FOTO ----------
-   position: relative transforma a foto no "ponto de referência"
-   para o selo, que vai usar position: absolute logo abaixo. */
+/* ---------- 3. FOTO ---------- */
 .sobre__foto {
     flex: 1;
     position: relative;
 }
 
-/* object-fit: cover faz a imagem preencher os 480px de altura
-   sem ficar esticada ou achatada (ela é cortada nas bordas, se preciso). */
 .sobre__foto img {
     width: 100%;
     height: 480px;
@@ -38,13 +28,7 @@
 }
 
 
-/* ---------- 4. SELO "DISPONÍVEL" ----------
-   - position: absolute tira o selo do fluxo normal e posiciona ele
-     em relação à foto (o pai com position: relative).
-   - bottom: 16px e left: 16px = 16px acima da borda de baixo
-     e 16px à direita da borda esquerda da foto.
-   - O fundo usa --cor-superficie (e não --branco) para o selo
-     acompanhar o tema escuro junto com o texto. */
+/* ---------- 4. SELO "DISPONÍVEL" ---------- */
 .selo {
     position: absolute;
     bottom: 16px;
@@ -60,9 +44,6 @@
     gap: 8px;
 }
 
-/* ::before cria um elemento "de mentira" ANTES do texto do selo,
-   sem precisar escrever nada no HTML. content: "" é obrigatório
-   para ele aparecer. Aqui ele vira um pontinho verde de "disponível". */
 .selo::before {
     content: "";
     width: 10px;
@@ -73,8 +54,7 @@
 }
 
 
-/* ---------- 5. TEXTO ----------
-   flex: 1.5 = o texto ocupa 1,5 vez o espaço da foto. */
+/* ---------- 5. TEXTO ---------- */
 .sobre__texto {
     flex: 1.5;
     display: flex;
@@ -87,14 +67,11 @@
     font-size: 40px;
 }
 
-/* "design com significado." em terracota (seção de fundo claro) */
+/* "design com significado." em terracota  */
 .sobre__texto h2 span {
     color: var(--cor-primaria);
 }
 
-/* Os badges (JavaScript, React...) em linha.
-   flex-wrap: wrap deixa eles "quebrarem" para a linha de baixo
-   quando não couberem. A aparência de cada badge vem do componentes.css. */
 .badges {
     display: flex;
     flex-wrap: wrap;

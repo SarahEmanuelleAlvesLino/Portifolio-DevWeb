@@ -4,16 +4,9 @@
    força, vale a que vem depois. Assim estas regras vencem as dos módulos.
    ============================================================= */
 
-/* @media = "aplique estas regras só SE a condição for verdadeira".
-   max-width: 768px = só quando a tela tiver 768px de largura ou menos. */
 @media (max-width: 768px) {
 
-    /* ---------- 1. TUDO EM COLUNA ----------
-       O layout inteiro já é feito com flex. Para o celular, basta
-       trocar a direção de "linha" (lado a lado) para "coluna" (um embaixo do outro).
-       align-items: stretch faz cada bloco ocupar a largura toda
-       (sem isso, os blocos que estavam com "center" ou "flex-start"
-       ficariam estreitos, do tamanho do próprio conteúdo). */
+    /* ---------- 1. TUDO EM COLUNA ---------- */
     .hero__conteudo,
     .sobre__conteudo,
     .cards,
@@ -42,11 +35,7 @@
     }
 
 
-    /* ---------- 3. TAMANHOS MENORES ----------
-       Os seletores são IGUAIS aos dos módulos (ex.: ".hero h1").
-       Com a mesma força, vence a regra que vem depois, ou seja, esta.
-       Se escrevêssemos só "h2", a regra perderia para ".contato__texto h2",
-       que é mais específica (tem uma classe). */
+    /* ---------- 3. TAMANHOS MENORES ----------*/
     .hero h1 {
         font-size: 40px;
     }

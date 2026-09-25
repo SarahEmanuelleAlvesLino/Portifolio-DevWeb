@@ -103,8 +103,7 @@
     font-weight: 600;
 }
 
-/* Seta da direita (último filho).
-   margin-left: auto "empurra" a seta para a ponta direita do cartão. */
+/* Seta da direita  */
 .canal > i:last-child {
     margin-left: auto;
     color: rgba(255, 255, 255, 0.6);

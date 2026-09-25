@@ -85,9 +85,7 @@ body {
 /* ---------- 5. TIPOGRAFIA BASE ---------- */
 
 /* Títulos: mais grossos e com linhas mais "juntinhas" que o texto comum */
-h1,
-h2,
-h3 {
+h1,h2,h3 {
     font-weight: 700;
     line-height: 1.15;
     color: var(--cor-texto);

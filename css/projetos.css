@@ -1,7 +1,5 @@
 /* =============================================================
    PROJETOS.CSS — SEÇÃO "PORTFÓLIO" (#projetos)
-   Layout assimétrico: um projeto grande à esquerda e
-   uma coluna com dois projetos menores à direita.
    ============================================================= */
 
 
@@ -12,8 +10,7 @@
 }
 
 
-/* ---------- 2. LAYOUT ASSIMÉTRICO ----------
-   align-items: flex-start alinha os itens pelo topo, sem esticar a altura. */
+/* ---------- 2. LAYOUT ASSIMÉTRICO ---------- */
 .projetos__layout {
     display: flex;
     gap: 24px;
@@ -87,7 +84,7 @@
 /* :last-child pega o ÚLTIMO span da caixa (a porcentagem).
    Verde = variação positiva, como nos painéis financeiros. */
 .mini-caixa span:last-child {
-    color: #22a06b;
+    color: #2bb4b4;
     font-weight: 600;
 }
 

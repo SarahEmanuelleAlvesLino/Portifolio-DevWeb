@@ -18,10 +18,7 @@
 }
 
 
-/* ---------- 3. CARD ----------
-   flex: 1 = os três cards com a mesma largura.
-   Por dentro, os itens ficam empilhados (ícone, título, texto, link).
-   A sombra é bem fraquinha (5% de preto), só para "descolar" o card do fundo. */
+/* ---------- 3. CARD ---------- */
 .card {
     flex: 1;
     display: flex;
@@ -33,11 +30,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Ícone do card, dentro de um quadradinho com cantos arredondados.
-   O ">" pega só o ícone que é filho DIRETO do card, e não a setinha
-   que fica dentro do link "Saiba mais".
-   rgba(214, 109, 80, 0.12) é o terracota (214, 109, 80) com 12% de opacidade:
-   um fundo bem clarinho da mesma cor do ícone. */
+/* Ícone do card */
 .card > i {
     width: 48px;
     height: 48px;

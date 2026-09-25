@@ -1,12 +1,9 @@
 /* =============================================================
    RODAPE.CSS — RODAPÉ (footer)
-   Fundo escuro: direitos autorais à esquerda, redes sociais à direita.
    ============================================================= */
 
 
-/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
-   O rodapé tem a mesma cor do contato, então uma linha fina
-   em cima (border-top) separa as duas partes. */
+/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
 .rodape {
     background: var(--cor-escura);
     color: var(--branco);
@@ -15,8 +12,7 @@
 }
 
 
-/* ---------- 2. LAYOUT ----------
-   space-between: texto numa ponta, redes sociais na outra. */
+/* ---------- 2. LAYOUT ----------*/
 .rodape__conteudo {
     display: flex;
     justify-content: space-between;

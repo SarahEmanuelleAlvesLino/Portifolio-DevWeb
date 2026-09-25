@@ -18,10 +18,7 @@
 }
 
 
-/* ---------- 3. PASSO ----------
-   flex: 1 = os quatro passos com a mesma largura.
-   border-top desenha uma linha só em cima de cada passo,
-   como uma "linha do tempo" dividida em etapas. */
+/* ---------- 3. PASSO ---------- */
 .passo {
     flex: 1;
     display: flex;
