@@ -1,8 +1,11 @@
 body.tema-escuro {
-    --cor-fundo:      #14232a;   /* fundo das seções: teal bem escuro */
+    /* --cor-fundo:      #14232a;  */  /* fundo das seções: teal bem escuro */
+    --cor-fundo:      #050606;
     --cor-superficie: #1e333b;   /* cards: um pouco mais claros que o fundo */
     --cor-texto:      #eef3f5;   /* títulos: quase branco */
     --cor-texto-2:    #9fb3bc;   /* parágrafos: cinza-azulado claro */
     --cor-suave:      #3a5560;   /* bordas e linhas: mais escuras */
+    --cor-escura:    #88bac830;
 
 }
+
