@@ -27,6 +27,12 @@
        tema escuro ela muda (veja tema-escuro.css). Por isso os cards
        usam esta variável, e não --branco. */
     --cor-superficie: #ffffff;   /* cor dos cards */
+
+    /* Fundos suaves de algumas seções (versões bem claras da paleta).
+       Só existem no modo CLARO: no tema escuro, cada seção volta
+       para --cor-fundo (veja o fim de servicos.css, projetos.css e processo.css). */
+    --secao-pessego: #f9e7dd76;   /* pêssego bem suave */
+    --secao-suave:   #e8eef1a8;   /* azul-acinzentado bem suave */
 }
 
 

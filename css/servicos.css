@@ -4,10 +4,19 @@
    ============================================================= */
 
 
-/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
+   No modo claro, fundo pêssego bem suave. */
 .servicos {
-    background: var(--cor-fundo);
+    background-color: var(--secao-pessego);
     padding: 100px 0;
+}
+
+/* No tema escuro, volta para o fundo escuro padrão.
+   "body.tema-escuro .servicos" = a seção .servicos QUANDO o body tem
+   a classe tema-escuro. Esse seletor é mais específico que ".servicos",
+   por isso vence a regra de cima. */
+body.tema-escuro .servicos {
+    background-color: var(--cor-fundo);
 }
 
 

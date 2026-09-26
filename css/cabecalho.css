@@ -29,6 +29,23 @@ html {
     z-index: 1000;
     background-color: var(--cor-escura);
     padding: 16px 0;
+    /* transition faz a troca de cor acontecer aos poucos (em 0,3 segundo),
+       em vez de mudar de uma vez. "ease" = começa e termina devagar. */
+    transition: background-color 0.3s ease;
+}
+
+/* Estado "rolado": quando a página foi rolada para baixo.
+   Quem coloca a classe "rolado" no cabeçalho é o script.js.
+   - rgba(54, 103, 117, 0.75) = o mesmo teal (#366775), mas com 75%
+     de opacidade: dá para ver um pouco do conteúdo passando por trás.
+   - backdrop-filter: blur(10px) desfoca o que está ATRÁS do cabeçalho,
+     criando o efeito de "vidro fosco".
+   - -webkit-backdrop-filter é a mesma regra, escrita do jeito que
+     alguns navegadores (como o Safari) entendem. */
+.cabecalho.rolado {
+    background-color: rgba(54, 103, 117, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);   /* compatibilidade */
 }
 
 /* Logo | menu | botão de tema na mesma linha.

@@ -4,10 +4,17 @@
    ============================================================= */
 
 
-/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+/* ---------- 1. FUNDO E ESPAÇAMENTO ----------
+   No modo claro, fundo pêssego bem suave. */
 .processo {
-    background: var(--cor-fundo);
+    background-color: var(--cor-fundo);
     padding: 100px 0;
+}
+
+/* No tema escuro, volta para o fundo escuro padrão
+   (seletor mais específico, por isso vence a regra de cima) */
+body.tema-escuro .processo {
+    background-color: var(--cor-fundo);
 }
 
 

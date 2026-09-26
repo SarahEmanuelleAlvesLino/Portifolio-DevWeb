@@ -28,3 +28,27 @@ botaoTema.addEventListener('click', function () {
     // O "? :" é um if/else curto: condição ? valor_se_verdadeiro : valor_se_falso
     icone.className = estaEscuro ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
 });
+
+
+// =============================================================
+// CABEÇALHO TRANSPARENTE AO ROLAR A PÁGINA
+// Quando a pessoa rola a página para baixo, o cabeçalho ganha a
+// classe "rolado". Essa classe é o "gatilho" que o CSS
+// (cabecalho.css) usa para deixar o fundo transparente com efeito de vidro.
+// =============================================================
+
+// 4. Pega o cabeçalho na página (pela classe .cabecalho)
+const cabecalho = document.querySelector('.cabecalho');
+
+// 5. "Escuta" a rolagem da janela. A função roda toda vez que a página rola.
+window.addEventListener('scroll', function () {
+
+    // window.scrollY é o quanto a pessoa já rolou, em pixels, a partir do topo.
+    // Passou de 30px? Liga a classe "rolado".
+    // Voltou para perto do topo? Desliga a classe, e o cabeçalho fica sólido de novo.
+    if (window.scrollY > 30) {
+        cabecalho.classList.add('rolado');
+    } else {
+        cabecalho.classList.remove('rolado');
+    }
+});
