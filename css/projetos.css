@@ -43,14 +43,52 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Área de "imagem" do projeto (altura mínima para aparecer mesmo vazia) */
+/* Área de "imagem" do projeto (altura mínima para aparecer mesmo vazia).
+   - position: relative transforma o preview no "ponto de referência"
+     para a imagem, que usa position: absolute (veja a parte 4).
+   - overflow: hidden corta o que passar das bordas. */
 .projeto__preview {
     min-height: 140px;
     padding: 16px;
+    position: relative;
+    overflow: hidden;
 }
 
 
-/* ---------- 4. PREVIEW DO PROJETO GRANDE ----------
+/* ---------- 4. IMAGEM DO PROJETO ----------
+   A imagem fica "colada" no preview, cobrindo ele inteiro:
+   - position: absolute + top: 0 + left: 0 prendem a imagem no canto
+     de cima à esquerda do preview (o pai com position: relative).
+   - width e height em 100% fazem ela ter o tamanho do preview todo.
+     (Por que absolute? O preview só tem min-height, sem altura fixa,
+     e nesse caso um height: 100% "normal" não funciona: a imagem
+     ficaria com a altura dela mesma. Com absolute, o 100% passa a
+     valer a altura real do preview.)
+   - object-fit: cover preenche o espaço cortando o excesso, sem esticar.
+   - z-index: 0 deixa a imagem na camada de trás.
+   Se o arquivo da imagem ainda não existir, o degradê do preview
+   continua aparecendo por trás, como "reserva". */
+.projeto__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* preenche o espaço cortando o excesso, sem esticar */
+    display: block;
+    z-index: 0;
+}
+
+/* Conteúdo que fica POR CIMA da imagem (as mini-caixas do projeto grande).
+   position: relative + z-index: 1 colocam as caixas numa camada
+   à frente da imagem (que está no z-index 0). */
+.projeto__preview .mini-caixa {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ---------- 5. PREVIEW DO PROJETO GRANDE ----------
    Imita um painel (dashboard) escuro com duas caixinhas de números. */
 .projeto--grande .projeto__preview {
     min-height: 300px;
@@ -89,7 +127,7 @@
 }
 
 
-/* ---------- 5. PREVIEWS DOS PROJETOS MENORES ----------
+/* ---------- 6. PREVIEWS DOS PROJETOS MENORES ----------
    linear-gradient cria um degradê: 135deg é a direção (diagonal),
    depois vêm as cores de início e de fim.
    :nth-child(1) e :nth-child(2) diferenciam o 1º e o 2º projeto da coluna. */
@@ -102,7 +140,7 @@
 }
 
 
-/* ---------- 6. INFORMAÇÕES DO PROJETO ---------- */
+/* ---------- 7. INFORMAÇÕES DO PROJETO ---------- */
 .projeto__info {
     padding: 24px;
     display: flex;

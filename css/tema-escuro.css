@@ -5,7 +5,7 @@ body.tema-escuro {
     --cor-texto:      #eef3f5;   /* títulos: quase branco */
     --cor-texto-2:    #9fb3bc;   /* parágrafos: cinza-azulado claro */
     --cor-suave:      #3a5560;   /* bordas e linhas: mais escuras */
-    --cor-escura:    #88bac830;
+    --cor-escura:    #88bac830 ;
 
 }
 
