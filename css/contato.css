@@ -3,10 +3,14 @@
    Fundo escuro: texto à esquerda, canais de contato à direita.
    ============================================================= */
 
-
-/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
 .contato {
-    background: var(--cor-escura);
+    background-color: var(--cor-escura);
+    background-image:
+        linear-gradient(var(--overlay-hero), var(--overlay-hero)),
+        url('../assets/Contato/Fundo.jpg');
+    background-size: cover;       /* a imagem cobre a seção toda, sem distorcer */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete a imagem como azulejo */
     color: var(--branco);
     padding: 100px 0;
 }

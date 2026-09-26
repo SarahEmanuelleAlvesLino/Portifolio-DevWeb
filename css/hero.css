@@ -5,9 +5,27 @@
    ============================================================= */
 
 
-/* ---------- 1. FUNDO E ESPAÇAMENTO ---------- */
+/* ---------- 1. FUNDO COM IMAGEM TRANSLÚCIDA E ESPAÇAMENTO ----------
+   Mesma técnica do Contato: várias camadas no background-image,
+   separadas por vírgula. A PRIMEIRA da lista fica POR CIMA.
+   - 1ª camada (por cima): o "véu" teal translúcido. A cor vem da
+     variável --overlay-hero (base.css), que muda no tema escuro
+     (tema-escuro.css). Assim o hero acompanha o tema sozinho.
+     Para a foto aparecer mais ou menos, ajuste a opacidade na variável.
+   - 2ª camada (por baixo): a foto. O "../" volta uma pasta, porque o
+     caminho é contado a partir deste arquivo (que está em css/).
+   - background-color fica abaixo de tudo: é a "reserva" que mantém o
+     hero teal enquanto a foto não existir.
+   O padding de cima (140px) é maior que o de baixo (100px) porque
+   o cabeçalho fixo fica por cima do começo desta seção. */
 .hero {
     background-color: var(--cor-escura);
+    background-image:
+        linear-gradient(var(--overlay-hero), var(--overlay-hero)),
+        url('../assets/Contato/Fundo.jpg');
+    background-size: cover;       /* a imagem cobre a seção toda, sem distorcer */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete a imagem como azulejo */
     color: var(--branco);
     padding: 140px 0 100px;
 }
@@ -89,14 +107,7 @@
 
 
 /* ---------- 5. JANELA DE CÓDIGO ----------
-   - rgba(0, 0, 0, 0.2) = preto com 20% de opacidade: escurece
-     um pouco o fundo teal, sem esconder ele.
-   - border-radius: 14px arredonda os cantos da janela.
-   - overflow: hidden corta o que passar dos cantos arredondados.
-   - box-shadow cria uma sombra: 0 (deslocamento para o lado),
-     20px (deslocamento para baixo), 50px (quanto a sombra "espalha"
-     e fica borrada) e a cor da sombra (preto com 30%).
-     Isso dá a impressão de que a janela "flutua". */
+ */
 .janela-codigo {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -114,10 +125,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Nome do arquivo ("luis.dev").
-   O ">" pega só o span que é filho DIRETO da barra, e não os spans
-   dos pontinhos (que estão um nível mais dentro).
-   margin-left: auto "empurra" o nome para a ponta direita da barra. */
 .janela-codigo__barra > span {
     margin-left: auto;
     color: rgba(255, 255, 255, 0.5);
@@ -137,9 +144,6 @@
     border-radius: 50%;
 }
 
-/* :nth-child(n) escolhe o filho pela posição (1º, 2º, 3º).
-   Assim cada pontinho recebe uma cor diferente sem precisar de classes extras.
-   São as cores clássicas de janela: fechar, minimizar e maximizar. */
 .pontinho:nth-child(1) {
     background: #ff5f57;   /* vermelho */
 }

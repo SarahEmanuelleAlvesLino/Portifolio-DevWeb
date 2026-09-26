@@ -6,6 +6,7 @@ body.tema-escuro {
     --cor-texto-2:    #9fb3bc;   /* parágrafos: cinza-azulado claro */
     --cor-suave:      #3a5560;   /* bordas e linhas: mais escuras */
     --cor-escura:    #88bac830 ;
+    --overlay-hero: rgba(30, 40, 42, 0.9); /* fundo translúcido para o hero no tema escuro */
 
 }
 

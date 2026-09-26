@@ -6,10 +6,7 @@
    ============================================================= */
 
 
-/* ---------- 1. VARIÁVEIS DE COR ----------
-   :root é o elemento mais alto da página (o <html>).
-   Variáveis criadas aqui podem ser usadas em qualquer lugar com var(--nome).
-   Vantagem: se eu quiser trocar uma cor, mudo só aqui e o site todo muda. */
+/* ---------- 1. VARIÁVEIS DE COR ---------- */
 :root {
     /* 4 cores da paleta pastel */
     --cor-escura:   #366775;   /* teal escuro: fundos escuros e títulos */
@@ -23,9 +20,7 @@
     --cor-texto-2:  #6b8592;   /* texto secundário (parágrafos) */
     --branco:       #ffffff;
 
-    /* Cor das "superfícies" (cards, caixas). Começa branca, mas no
-       tema escuro ela muda (veja tema-escuro.css). Por isso os cards
-       usam esta variável, e não --branco. */
+    /* Cor das "superfícies" (cards, caixas). */
     --cor-superficie: #ffffff;   /* cor dos cards */
 
     /* Fundos suaves de algumas seções (versões bem claras da paleta).
@@ -33,13 +28,12 @@
        para --cor-fundo (veja o fim de servicos.css, projetos.css e processo.css). */
     --secao-pessego: #f9e7dd76;   /* pêssego bem suave */
     --secao-suave:   #e8eef1a8;   /* azul-acinzentado bem suave */
+
+    --overlay-hero: rgba(54, 103, 117, 0.88);   /* mesmo teal do modo claro */
 }
 
 
-/* ---------- 2. RESET ----------
-   O asterisco (*) seleciona TODOS os elementos.
-   - margin e padding: 0 tiram os espaços que o navegador coloca sozinho.
-   - box-sizing: border-box faz a largura incluir o padding e a borda. */
+/* ---------- 2. RESET ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -60,16 +54,11 @@ img {
 
 
 /* ---------- 3. PÁGINA ---------- */
-
-/* Rolagem suave: ao clicar num link do menu (#sobre, #contato...),
-   a página "desliza" até a seção em vez de pular de uma vez */
 html {
     scroll-behavior: smooth;
 }
 
-/* Configurações gerais do corpo da página.
-   - font-family: Poppins; se ela não carregar, usa a fonte sem serifa do sistema.
-   - line-height: 1.6 = altura da linha 1,6x o tamanho da letra (leitura confortável). */
+/* Configurações gerais do corpo da página.*/
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--cor-fundo);
